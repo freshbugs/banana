@@ -1,0 +1,84 @@
+"Banana quest" by Stephen Pi
+
+The story genre is "Fantasy".
+
+The story creation year is 2013.
+
+The release number is 1.
+
+Release along with cover art ("Ron Turner holding a banana").
+
+Release along with an interpreter.
+
+Release along with the source text.
+
+Use scoring.
+The maximum score is 101.
+
+A person can be hungry. The player is hungry.
+A person can be tidy. The player is not tidy.
+
+Before eating, if the player is not hungry, say "You're not hungry any more." instead.
+
+When play begins:
+    say "You must have walked past this house a hundred times, but you never really noticed it before. This time you find yourself drawn to it by an unaccountable sense that it holds the key to satisfying some deep inner hunger. The front door is unlocked, and you let yourself inside." 
+
+The Front room is a room. "You are in the front room of the puzzling little house. The front door leads out onto the street to the north, and the back room is to the south. A cupboard is bolted to one wall."
+
+The cupboard is in the Front room. It is a closed, locked, enterable container. It is fixed in place. The description is "Somebody has scrawled the words 'Help yourself' in magic marker on one side of the cupboard." 
+Instead of touching the cupboard: say "The cupboard is smooth and cool to the touch."
+
+The banana is in the cupboard. The description is "The banana is elegantly curved, and is just beginning to show some streaks of black." The banana is edible. 
+Instead of tasting or eating the banana:
+    say "You eagerly consume the banana.";
+    now the player is not hungry;
+    increase the score by 100;
+    remove banana from play;
+    move peel to player.
+Instead of peeling the banana for the first time:
+    say "You pull back some of the skin, revealing the banana's pale firm interior.";
+    now the description of the banana is "The skin is partly pulled back to reveal its firm pale interior.".
+Instead of peeling the banana: say "Why not eat the banana before pulling back the skin any further?"
+Instead of smelling the banana: say "It smells ripe and fragrant."
+Instead of touching the banana: say "It feels firm and ripe."
+Understand "fruit" as the banana.
+Understand "open [the banana]" as peeling.
+
+The peel is an object. The description is "A smooth, yellow banana peel, just beginning to show some streaks of black."
+After inserting the peel into the bin:
+    say "You throw away the banana peel. Good for you!";
+    now the player is tidy;
+    increase the score by 1.
+Before taking the peel when the peel is inside the bin:
+    decrease the score by 1;
+    now the player is not tidy.
+Instead of smelling the peel: say "It smells like a ripe banana."
+Instead of touching the peel: say "It feels smooth on one side, and slightly slippery on the other."
+Understand "peel [something]" as peeling. Peeling is an action applying to one carried thing.
+Carry out peeling: say "I don't think peeling [the noun] even makes sense."
+
+The front door is an open door. It is scenery. It is north of the Front room and south of The Street.
+Before going to The Street:
+    if the player is hungry, say "You can't leave the house until you've filled the emptiness you feel inside." instead;
+    if the player is tidy, say "You burst into the sunshine, ready to take on the day";
+    if the player is not tidy, say "You walk out into the sunshine, your hunger satisfied, but with a gnawing sense of some unfinished business.";
+    end the story;
+
+The Back room is south of the Front room. "You are in the back room of the puzzling little house. You can go north."
+
+The rubbish bin is in the Back room. It is a container. The description is "A large metal rubbish bin, battered and stained with use." .
+Instead of throwing [something] at the rubbish bin: try inserting the noun into the rubbish bin.
+Understand "trashcan", "trash" or "can" as the rubbish bin.
+Instead of taking or touching the rubbish bin: say "You'd rather not touch the rubbish bin."
+Instead of smelling the rubbish bin: say "It stinks!".
+Instead of tasting the rubbish bin: say "Eeuggh!".
+Instead of inserting something edible into the rubbish bin: say "You'd rather not waste perfectly good food."
+Understand the command "discard" as something new.
+Discarding is an action applying to one thing.
+Understand "throw [something] away" as discarding.
+Understand "throw away [something]" as discarding.
+Understand "discard [something]" as discarding.
+Instead of discarding something when the rubbish bin is not visible, say "You can't see a rubbish bin in which to discard [the noun]."
+Instead of discarding something, try inserting the noun into the rubbish bin.
+
+The key is in the Back room. The key unlocks the cupboard.
